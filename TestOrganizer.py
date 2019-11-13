@@ -2,12 +2,14 @@ import os
 import sys
 import shutil
 
+
 def isInt(value):
     try:
         int(value)
         return True
     except:
         return False
+
 
 def searchOutputNum(value, output):
     position = 0
@@ -21,8 +23,8 @@ def searchOutputNum(value, output):
 
     return position
 
-def main():
 
+def main():
     files = os.listdir()
 
     inputs = []
@@ -36,7 +38,7 @@ def main():
             if isInt(file[len("output")]):
                 outputs.append(file)
 
-    if len(inputs) > 0 and len(outputs) > 0 and len(inputs) == len(outputs):
+    if 0 < len(inputs) == len(outputs) > 0:
         pos = 0
         for file in inputs:
             fileNum = file[5:]
@@ -47,5 +49,5 @@ def main():
             pos += 1
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     main()

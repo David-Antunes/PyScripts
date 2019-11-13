@@ -4,7 +4,7 @@ import sys
 
 # Obtains the name of all the files where this program is present, then cleans the array leaving only directories
 def getSubDirectory():
-    #Gets all the file names
+    # Gets all the file names
     list = os.listdir()
 
     # Cleans the array leaving only the name of the directories in them
@@ -16,6 +16,8 @@ def getSubDirectory():
             folder.append(file)
 
     return folder
+
+
 # Verifies if the first 3 characters of the string correspond to numbers. Returns True if there is 2 numbers and a space. False otherwise.
 def verifyNumber(number):
     try:
@@ -30,13 +32,13 @@ def verifyNumber(number):
     except IndexError:
         return False
 
-def  main():
 
+def main():
     if len(sys.argv) > 1 and sys.argv[1] == "update":
 
         folders = getSubDirectory()
         if len(folders) <= 99:
-            i = [0,0]
+            i = [0, 0]
             for dir in folders:
                 num_tag = dir[0:5]
 
@@ -56,7 +58,8 @@ def  main():
                     i[1] = 0
         print("Done.")
     else:
-         print("Miss click.")
+        print("Miss click.")
+
 
 if __name__ == "__main__":
     main()
